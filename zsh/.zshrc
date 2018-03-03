@@ -2,8 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export TERM="xterm-256color" 
+export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
+export PATH=$HOME/.npm-global/bin:$PATH
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -88,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias connectServerPW="ssh pickwin@104.197.62.61"
 alias pw="cd ~/Documents/PickWin/pickwin-frontend/ && npm start "
 alias chatS="cd ~/Documents/PickWin/chat-server/ && node server.js"
 alias postman="cd ~/Downloads/Postman && ./Postman"
@@ -95,12 +97,23 @@ alias firefoxq="/opt/firefox/firefox"
 alias gtop='/home/erre/.npm-global/bin/gtop'
 alias i3Config='vim ~/.config/i3/config'
 alias zshConfig='vim ~/.zshrc'
-alias secondScreen='cd ~/.screenlayout && ./pickwinDoubleScreen.sh'
+alias secondScreen='cd ~/.screenlayout && ./pickwinDoubleScreen.sh && xrandr --dpi 96'
+alias secondSmallScreen='cd ~/.screenlayout && ./pickwinDoubleScreenSmall.sh'
 alias smallScreen='cd ~/.screenlayout && ./smallresolution.sh'
 alias copyPwProd='cd ~/Documents/PickWin/pickwin-frontend/public && cp output.js ../../pickwin-web/cake/webroot/react && cp styles.css ../../pickwin-web/cake/webroot/react && cd ../../pickwin-web/cake/webroot/react'
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+#auto completion exercism
+#
+if [ -f ~/.config/exercism/exercism_completion.zsh  ]; then
+	  . ~/.config/exercism/exercism_completion.zsh
+  fi
+
+# startup Setup
+# exec no-startup-id ~/.screenlayout/smallResolution
+
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
+export PATH=$HOME/bin:$PATH

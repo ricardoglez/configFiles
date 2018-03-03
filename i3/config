@@ -227,10 +227,11 @@ client.urgent 		 $accentColorDark $accentColorLight	$accentColorDark  $whitest
  #exec --no-startup-id gnome-screensaver     # GNOME screensaver
  #exec --no-startup-id xautolock -time 10 -locker 'gnome-screensaver-command -l'
 
-#DPI 
- exec_always --no-startup-id xrandr --dpi 180
- exec_always --no-startup-id xrandr --output eDP-1 --mode 1920x1080
- set $touchpad DLL0704:01 06CB:76AE Touchpad
+#DPI  
+ exec --no-startup-id smallScreen
+ exec --nostartup-id xrandr --output eDP1 --primary
+ exec --no-startup-id xrandr --dpi 96
+set $touchpad DLL0704:01 06CB:76AE Touchpad
 
 # Touchpad config
  exec --no-startup-id xinput set-prop "$touchpad" "libinput Tapping Enabled" 1
